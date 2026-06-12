@@ -1,0 +1,82 @@
+nohup python main_fed.py      --dataset fashion_mnist \
+                        --model cnn \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence flame \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 1 \
+                        --save save/my_experiments\
+                        --iid 1 > /dev/null 2>&1 &
+94342                
+
+
+nohup python main_fed.py      --dataset fashion_mnist \
+                        --model cnn \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence newFlame \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 1 \
+                        --save save/my_experiments\
+                        --iid 1 \
+                        --mul 2.0 > /dev/null 2>&1 &
+87986
+
+
+
+nohup python main_fed.py      --dataset fashion_mnist \
+                        --model cnn \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence newFlame \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 1 \
+                        --save save/my_experiments\
+                        --iid 1 \
+                        --mul 3.0 > /dev/null 2>&1 &
+88078
+1325501
+
+nohup python main_fed.py      --dataset fashion_mnist \
+                        --model cnn \
+                        --lr 0.1 \
+                        --malicious 0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence avg \
+                        --epochs 200 \
+                        --gpu 0 \
+                        --save save/my_experiments\
+                        --iid 1 > /dev/null 2>&1 &
+106116

@@ -1,0 +1,87 @@
+nohup python main_fed.py      --dataset cifar \
+                        --model resnet \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence flame \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 1 \
+                        --save save/my_experiments\
+                        --iid 1 > /dev/null 2>&1 &
+92219
+
+
+nohup python main_fed.py      --dataset cifar \
+                        --model resnet \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence newFlame \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 1 \
+                        --save save/my_experiments\
+                        --mul 2.0 \
+                        --iid 1 > /dev/null 2>&1 &
+93318
+                        
+
+
+
+
+
+
+nohup python main_fed.py      --dataset cifar \
+                        --model resnet \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence newFlame \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 1 \
+                        --save save/my_experiments\
+                        --mul 3.0 \
+                        --iid 1 > /dev/null 2>&1 &
+93376
+
+
+nohup python main_fed.py      --dataset cifar \
+                        --model resnet \
+                        --lr 0.1 \
+                        --malicious 0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence avg \
+                        --epochs 200 \
+                        --gpu 0 \
+                        --save save/my_experiments\
+                        --iid 1 > /dev/null 2>&1 &
+
+106250

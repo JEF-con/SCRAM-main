@@ -1,0 +1,42 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data and local experiment artifacts
+data/*
+!data/README.md
+!data/__init__.py
+
+save/
+logs/
+outputLog/
+
+# Generated analysis/benchmark outputs
+scripts/analysis/
+results/analysis/
+results/benchmark/figures/
+
+# Local logs and runtime dumps
+*.log
+nohup.out
+
+# Model/checkpoint/temp files
+*.pt
+*.pth
+*.ckpt
+*.pkl

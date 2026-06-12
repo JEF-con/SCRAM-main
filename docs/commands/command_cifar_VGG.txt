@@ -1,0 +1,151 @@
+nohup python main_fed.py      --dataset cifar \
+                        --model VGG \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence flame \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 0 \
+                        --save save/my_experiments\
+                        --iid 1 > /dev/null 2>&1 &
+94491
+
+
+nohup python main_fed.py      --dataset cifar \
+                        --model VGG \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence newFlame \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 0 \
+                        --save save/my_experiments\
+                        --mul 2.0 \
+                        --iid 1 > /dev/null 2>&1 &
+94542
+                        
+
+
+
+
+
+
+nohup python main_fed.py      --dataset cifar \
+                        --model VGG \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence newFlame \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 0 \
+                        --save save/my_experiments\
+                        --mul 3.0 \
+                        --iid 1 > /dev/null 2>&1 &
+94603
+
+
+nohup python main_fed.py      --dataset cifar \
+                        --model VGG \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence krum \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 0 \
+                        --save save/my_experiments\
+                        --iid 1 > /dev/null 2>&1 &
+94905
+
+nohup python main_fed.py      --dataset cifar \
+                        --model VGG \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence RLR \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 0 \
+                        --save save/my_experiments\
+                        --iid 1 > /dev/null 2>&1 &
+94969
+
+
+
+nohup python main_fed.py      --dataset cifar \
+                        --model VGG \
+                        --attack dba \
+                        --lr 0.1 \
+                        --malicious 0.1 \
+                        --poison_frac 1.0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence fltrust \
+                        --epochs 200 \
+                        --attack_label 5 \
+                        --attack_goal -1 \
+                        --trigger 'square' \
+                        --triggerX 27 \
+                        --triggerY 27 \
+                        --gpu 0 \
+                        --save save/my_experiments\
+                        --iid 1 > /dev/null 2>&1 &
+95019
+
+nohup python main_fed.py      --dataset cifar \
+                        --model VGG \
+                        --lr 0.1 \
+                        --malicious 0 \
+                        --local_ep 2 \
+                        --local_bs 64 \
+                        --attack_begin 0 \
+                        --defence avg \
+                        --epochs 200 \
+                        --gpu 0 \
+                        --save save/my_experiments\
+                        --iid 1 > /dev/null 2>&1 &
+105887
