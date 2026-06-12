@@ -8,32 +8,25 @@
 
 ## Overview
 
-This repository contains the core code of `SCRAM`, a dual-server aggregation framework for robust and privacy-preserving federated learning under backdoor attacks.
+This repository contains the public code release of `SCRAM`, a dual-server aggregation framework for privacy-preserving and robust federated learning against backdoor attacks.
 
-The open-source version is organized around the following goals:
-
-- reproduce the main SCRAM defense pipeline in federated learning
-- run SCRAM-oriented training experiments under backdoor attacks
-- benchmark the runtime cost of major SCRAM stages
-- keep the public codebase lightweight and suitable for GitHub release
-
-This public version focuses on the **core training and benchmark code**. Local data analysis scripts, private experimental logs, cached datasets, and local outputs are not intended to be uploaded to GitHub.
+The public version includes the main local training pipeline, the core SCRAM implementation, and the benchmark scripts used to evaluate the runtime cost of major SCRAM stages.
 
 ## Repository Structure
 
 ```text
 SCRAM-main/
-  main_fed.py               # Main federated learning entry
-  models/                   # Models, local updates, attacks, evaluation
-  utils/                    # SCRAM core implementation and utilities
-  scripts/
-    benchmark/              # SCRAM benchmark and simulation scripts
-    plotting/               # Benchmark plotting scripts
-  docs/                     # Auxiliary documentation
-  results/
-    benchmark/              # Example benchmark summaries
-  archive/
-    legacy/                 # Archived historical prototypes
+  data/                     # Data notes and optional split metadata
+  docs/                     # Supplementary documentation
+  models/                   # Model, local update, attack, and evaluation modules
+  scripts/                  # Benchmark and plotting scripts
+  utils/                    # Core SCRAM implementation and shared utilities
+  .gitignore                # Ignore rules for local data/logs/outputs
+  install_requirements.sh   # Original environment installation script
+  LICENSE                   # License for public release
+  main_fed.py               # Main federated learning training entry
+  README.md                 # Repository overview
+  requirements.txt          # Python dependency list
 ```
 
 ## Environment
@@ -42,6 +35,11 @@ Recommended environment:
 
 - Python `>= 3.9`
 - PyTorch `>= 1.10`
+- NumPy
+- scikit-learn
+- matplotlib
+- hdbscan
+- phe
 
 Install dependencies with:
 
@@ -49,20 +47,19 @@ Install dependencies with:
 pip install -r requirements.txt
 ```
 
-The original environment installation script is kept in [install_requirements.sh](./install_requirements.sh).
+The original environment installation script is also provided in [install_requirements.sh](./install_requirements.sh).
 
 ## Data
 
-This repository does **not** include:
-
-- raw training datasets
-- cached dataset files
-- private experiment logs
-- local analysis outputs
+The `data/` folder is included in the public release for documentation and optional split metadata.
 
 Public datasets such as MNIST, FashionMNIST, and CIFAR-10 can be downloaded automatically through `torchvision`.
 
-See [data/README.md](./data/README.md) for more details.
+Please refer to [data/README.md](./data/README.md) for details about:
+
+- supported public datasets
+- optional client split index files
+- data-related files that are not included in the public release
 
 ## Main Training
 
@@ -112,9 +109,7 @@ Batch benchmark:
 python scripts/benchmark/run_benchmark_experiments.py --device cpu
 ```
 
-Benchmark outputs are written by default to:
-
-- `results/benchmark/`
+Benchmark result files are generated locally when the scripts are executed.
 
 ## Benchmark Plotting
 
@@ -123,31 +118,33 @@ python scripts/plotting/plot_scram_clients_lines.py
 python scripts/plotting/plot_param_scale_lines.py
 ```
 
-Generated figures are written to:
-
-- `results/benchmark/figures/`
+Generated figures are written to local output directories created by the scripts.
 
 ## Core Files
 
 - [main_fed.py](./main_fed.py): federated learning training entry
 - [utils/scram.py](./utils/scram.py): core SCRAM implementation
+- [models/](./models): model and local update related modules
 - [scripts/benchmark/benchmark_scram.py](./scripts/benchmark/benchmark_scram.py): runtime benchmark for SCRAM stages
 - [scripts/benchmark/run_benchmark_experiments.py](./scripts/benchmark/run_benchmark_experiments.py): batch benchmark runner
-- [docs/file_manifest.md](./docs/file_manifest.md): additional file-level description
+- [docs/](./docs): supplementary documentation for the public release
 
 ## Public Release Notes
 
-For the GitHub release, the repository is intentionally limited to code that is directly relevant to the core method and reproducible experiments.
+This public release keeps the files that are directly relevant to the training pipeline, SCRAM method, and benchmark scripts.
 
-The following items are excluded from public upload by default:
+The following items are not intended to be uploaded to GitHub:
 
-- dataset files and cached split files
-- local training outputs and checkpoints
-- local logs
-- analysis scripts under `scripts/analysis/`
-- generated analysis figures and intermediate artifacts
+- private experiment logs
+- local checkpoints and outputs
+- local analysis scripts
+- generated figures and intermediate artifacts
 
-See [.gitignore](./.gitignore) for the ignored paths.
+See [.gitignore](./.gitignore) for the ignored paths used in the public release.
+
+## License
+
+This repository is released under the license specified in [LICENSE](./LICENSE).
 
 ## Citation
 
